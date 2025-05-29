@@ -5,6 +5,7 @@ import yfinance as yf
 from statsmodels.tsa.arima.model import ARIMA
 import warnings
 from statsmodels.tsa.stattools import adfuller
+from datetime import datetime
 
 warnings.filterwarnings("ignore")
 
@@ -20,7 +21,7 @@ def fetch_stock_data(stock_symbol, start_date, end_date):
 
 stock_symbol = "AAPL"
 start_date = "2020-03-19"
-end_date = "2025-03-19"
+end_date = end_date = datetime.today().strftime('%Y-%m-%d')
 
 stock_prices = fetch_stock_data(stock_symbol, start_date, end_date)
 
